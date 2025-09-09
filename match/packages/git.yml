@@ -1,0 +1,30 @@
+# Claude Code Commands converted to Espanso triggers
+# Auto-generated from markdown files in commands/ directory
+#======================================================================================  
+name: git-commands
+package_author: Ruben
+parent: default
+matches:
+
+#======================================================================================  
+
+# cgitinit - Initialize git repo
+- trigger: "git1"
+  replace: |
+    Use gh to create a repo. Run `git add -A` and `git commit -m` with a message of your choice.
+    If you can't authenticate with gh, use the GitHub token in ".env" file and then `git push`. 
+    Please ask me what name I want for the remote repo. 
+
+#====================================================================================== 
+
+# cgitadd - Git add and commit
+- trigger: "git2"
+  replace: "Run `git add -A` and `git commit -m` with a message of your choice."
+
+#====================================================================================== 
+
+# cgitpush - Git push
+- trigger: "git3"
+  replace: "Run `git push`"
+
+#====================================================================================== 

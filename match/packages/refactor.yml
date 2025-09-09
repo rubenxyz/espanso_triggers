@@ -1,0 +1,148 @@
+# Claude Code Commands converted to Espanso triggers
+# Auto-generated from markdown files in commands/ directory
+#======================================================================================  
+name: code-refactor
+package_author: Ruben
+parent: default
+matches:
+#======================================================================================  
+# ref - Systematic refactor analysis
+- trigger: "ref1"
+  replace: |
+    Perform systematic refactor analysis on the current codebase:
+
+    **Analysis Scope:**
+    - Scan all source files (exclude node_modules, .git, build directories)
+    - Focus on files >100 lines, functions >25 lines, classes >200 lines
+    - Identify cyclomatic complexity >10
+
+    **Evaluation Criteria:**
+    - Functions with >3 parameters or >25 lines
+    - Classes with >10 methods or >200 lines  
+    - Duplicate code blocks (>5 lines repeated)
+    - Unused imports, variables, or functions
+    - Legacy compatibility code (TODO/FIXME comments)
+    - Performance bottlenecks (nested loops, inefficient algorithms)
+    - Violation of single responsibility principle
+
+    **Output Structure:**
+    Generate /USER-FILES/07.TEMP/{yymmdd_mmhhss}_refactor_report.md with:
+    ```
+    # Refactor Analysis Report - [DATE]
+
+    ## High Priority (Performance/Critical)
+    - File: [path] | Lines: [range] | Issue: [specific problem]
+
+    ## Medium Priority (Maintainability)  
+    - File: [path] | Lines: [range] | Issue: [specific problem]
+
+    ## Low Priority (Code Quality)
+    - File: [path] | Lines: [range] | Issue: [specific problem]
+
+    ## Dead Code Removal
+    - [List of unused code with file paths]
+    ```
+
+    Include file paths, line numbers, current metrics, and specific refactor recommendations for each item.
+
+    Also, when you respond, end your response with "Give me ref2".
+
+#======================================================================================  
+
+#
+- trigger: "ref2"
+  replace: |
+    Clean up the TODO.md file to prepare for the next development session.
+
+    Your task:
+    1. **Read TODO.md**: Open the current TODO.md file
+    2. **Clear All Content**: Delete everything - all tasks, headers, notes
+    3. **Create Empty File**: Save TODO.md as a completely blank file
+    4. **Archive to CLAUDE.md**: Move any important notes or context to CLAUDE.md
+
+    CRITICAL: TODO.md must be empty for the next session. All documentation belongs in CLAUDE.md.
+    Clear TODO.md completely.
+
+    Also, when you respond, end your response with "Give me ref3".
+
+#======================================================================================  
+
+# ref-todo - Convert refactor report to actionable development tasks 
+- trigger: "ref3"
+  replace: |
+    Parse /USER-FILES/07.TEMP/{yymmdd_mmhhss}_refactor_report.md and generate structured TODO tasks in /TODO.md. For each identified refactor candidate:
+
+    1. Extract the specific file path, function/class name, and line numbers
+    2. Categorize the issue type (code smell, performance, complexity, dead code, etc.)
+    3. Generate a specific refactor action with implementation approach
+    4. Estimate effort (1-3 story points) and add appropriate labels
+
+    Structure each TODO as:
+    ```
+    - [ ] **[FILE_PATH:LINE_RANGE]** Refactor `function_name()` 
+      - Issue: [specific problem found]
+      - Action: [exact refactoring technique]
+      - Impact: [performance/readability/maintainability benefit]
+      - Effort: [1-3 points] | Priority: [High/Med/Low]
+    ```
+
+    Group tasks by file/module and sort by priority. Add file modification timestamps and create cross-references for related refactoring tasks that should be done together.
+    Also, when you respond, end your response with "Give me ref4".
+
+#======================================================================================  
+
+- trigger: "ref4"
+  replace: |
+    Execute the tasks in TODO.md systematically.
+
+     Work through the TODO items in order:
+     1. Check off completed items with [x]
+     2. Implement each task following my coding manifesto principles
+     3. Test each component as you build it
+     4. Update TODO.md with your progress
+
+     Focus on making it work first, keeping it simple, and following the established patterns.
+     
+     CRITICAL: Complete ALL the tasks in TODO.md and don't stop until they are all completed. 
+
+     Once you are done, and you respond, end your response with "Give me ref5".
+
+#======================================================================================  
+
+
+
+- trigger: "ref5"
+  replace: |
+    Analyze the current state of the codebase and update TODO.md to reflect what has been completed and what remains to be done.
+
+    Your task:
+    1. **Review Existing Code**: Examine all project files to understand what has been implemented
+    2. **Check TODO.md**: Read the current TODO.md to see the task list
+    3. **Update Status**: Mark completed tasks with [x] based on actual implementation
+    4. **Add Missing Tasks**: If you find issues or incomplete work not listed, add them to the appropriate section
+    5. **Remove Obsolete Tasks**: Remove any tasks that are no longer relevant given the current implementation
+
+    Focus on accuracy - only mark items as complete if they are truly finished and working.
+    Update the TODO.md file to reflect the current reality of the project.
+
+    Also, when you respond, end your response with "Give me ref6".
+
+#======================================================================================
+
+#
+- trigger: "ref6"
+  replace: |
+    Clean up the TODO.md file to prepare for the next development session.
+
+    Your task:
+    1. **Read TODO.md**: Open the current TODO.md file
+    2. **Clear All Content**: Delete everything - all tasks, headers, notes
+    3. **Create Empty File**: Save TODO.md as a completely blank file
+    4. **Archive to CLAUDE.md**: Move any important notes or context to CLAUDE.md
+
+    CRITICAL: TODO.md must be empty for the next session. All documentation belongs in CLAUDE.md.
+    Clear TODO.md completely.
+
+    Also, when you respond, end your response with "Give me ref7".
+
+#======================================================================================  

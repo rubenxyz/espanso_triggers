@@ -1,0 +1,72 @@
+# Claude Code Commands converted to Espanso triggers
+# Auto-generated from markdown files in commands/ directory
+#======================================================================================  
+name: todo
+package_author: Ruben
+parent: default
+matches:
+
+#======================================================================================  
+# Execute all TODO tasks
+- trigger: "ctodoexe"
+  replace: |
+    Execute the tasks in TODO.md systematically.
+
+     Work through the TODO items in order:
+     1. Check off completed items with [x]
+     2. Implement each task following my coding manifesto principles
+     3. Test each component as you build it
+     4. Update TODO.md with your progress
+
+     Focus on making it work first, keeping it simple, and following the established patterns.
+
+     CRITICAL: Complete ALL the tasks in TODO.md and don't stop until they are all completed. 
+
+#======================================================================================  
+# Update TODO status based on codebase
+- trigger: "ctodoupdate"
+  replace: |
+    Analyze the current state of the codebase and update TODO.md to reflect what has been completed and what remains to be done.
+
+    Your task:
+    1. **Review Existing Code**: Examine all project files to understand what has been implemented
+    2. **Check TODO.md**: Read the current TODO.md to see the task list
+    3. **Update Status**: Mark completed tasks with [x] based on actual implementation
+    4. **Add Missing Tasks**: If you find issues or incomplete work not listed, add them to the appropriate section
+    5. **Remove Obsolete Tasks**: Remove any tasks that are no longer relevant given the current implementation
+
+    Focus on accuracy - only mark items as complete if they are truly finished and working.
+    Update the TODO.md file to reflect the current reality of the project.
+
+#======================================================================================  
+# Remove completed tasks from TODO
+- trigger: "ctodoclean"
+  replace: |
+    Clean up the TODO.md file to prepare for the next development session.
+
+    Your task:
+    1. **Read TODO.md**: Open the current TODO.md file
+    2. **Remove ALL Content**: Delete everything - all tasks (completed [x] and incomplete [ ]), headers, notes
+    3. **Leave File Empty**: The TODO.md should be completely blank
+    4. **Move Notes to CLAUDE.md**: If there are any important notes, reminders, or context in TODO.md, append them to CLAUDE.md
+
+    CRITICAL: TODO.md must be a completely blank file after cleanup. Any persistent documentation belongs in CLAUDE.md.
+    Make TODO.md empty for the next fresh start.
+
+#======================================================================================  
+# Add stop marker to prevent scope creep
+- trigger: "ctodostop"
+  replace: |
+    Add a clear boundary marker to TODO.md to indicate where core functionality ends.
+
+    Your task:
+    1. **Check TODO.md**: Read the current TODO.md file
+    2. **Look for Marker**: Check if the STOP HERE marker already exists
+    3. **Add if Missing**: If not present, add the following to the end of TODO.md:
+
+    ### ⛔ STOP HERE ⛔
+    ### DO NOT IMPLEMENT ANYTHING BELOW THIS LINE WITHOUT EXPLICIT USER REQUEST
+    ### THE CORE FUNCTIONALITY IS COMPLETE
+
+    This helps prevent scope creep and keeps development focused on essential features.
+    Only add the marker if it's not already present in the file.

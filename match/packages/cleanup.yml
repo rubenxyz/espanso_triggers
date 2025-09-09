@@ -1,0 +1,160 @@
+# Claude Code Commands converted to Espanso triggers
+# Auto-generated from markdown files in commands/ directory
+#======================================================================================  
+name: code-cleanup
+package_author: Ruben
+parent: default
+matches:
+#======================================================================================  
+
+# cleanup - Systematic code cleanup analysis
+- trigger: "clean1"
+  replace: |
+    Perform systematic cleanup analysis on the codebase:
+
+    **Scan Strategy:**
+    - Analyze source code files (exclude node_modules, .git, dist, build)
+    - Check import/dependency usage across entire project
+    - Identify unreachable code paths using static analysis
+    - Detect duplicate code blocks (>3 lines, >80% similarity)
+
+    **Cleanup Categories:**
+    1. **Dead Code**: Unused functions, classes, variables, imports
+    2. **Unreachable Logic**: Conditional branches never executed, unreferenced routes
+    3. **Debugging Artifacts**: console.log, print statements, debug flags
+    4. **Obsolete Items**: TODO/FIXME >6 months old, commented code blocks
+    5. **Duplicates**: Repeated logic, redundant utilities, duplicate constants
+    6. **Empty/Minimal Files**: Files with <5 lines of actual code
+    7. **Configuration Bloat**: Unused env variables, config entries
+
+    **Output Format in /USER-FILES/07.TEMP/{yymmdd_mmhhss}_cleanup_report.md:**
+    ```
+    # Code Cleanup Analysis - [DATE]
+
+    ## File Deletion Candidates
+    - [file_path] - [reason + size saved]
+
+    ## Dead Code Removal (by file)
+    ### [filename]
+    - Lines [X-Y]: [specific unused item]
+    - Lines [A-B]: [another item]
+
+    ## Duplicate Code Consolidation
+    - [file1:lines] duplicates [file2:lines]
+    ```
+
+    **CRITICAL SAFETY RULE:** 
+    - Can identify cleanup opportunities in `/USER-FILES/` for informational purposes
+    - NEVER recommend deleting or moving files in `/USER-FILES/`
+    - Mark USER-FILES items as "INFORMATIONAL ONLY - NO ACTION"
+
+    Also, when you respond, end your response with "Give me clean2".
+
+#======================================================================================  
+
+#
+- trigger: "clean2"
+  replace: |
+    Clean up the TODO.md file to prepare for the next development session.
+
+    Your task:
+    1. **Read TODO.md**: Open the current TODO.md file
+    2. **Remove ALL Content**: Delete everything - tasks, sections, notes
+    3. **Leave Empty**: Save TODO.md as a blank file
+    4. **Move to CLAUDE.md**: Transfer any important notes or context to CLAUDE.md
+
+    IMPORTANT: TODO.md should be completely empty. Any persistent information goes in CLAUDE.md.
+    Empty TODO.md entirely.
+
+    Also, when you respond, end your response with "Give me clean3".
+
+#======================================================================================  
+
+#
+- trigger: "clean3"
+  replace: |
+    Parse /USER-FILES/07.TEMP/{yymmdd_mmhhss}_cleanup_report.md and generate structured cleanup tasks in /TODO.md. For each identified cleanup opportunity:
+
+    **Task Generation Rules:**
+    1. Extract file paths, line numbers, and specific items to remove
+    2. Categorize by risk level (Safe/Caution/Review-Required)
+    3. Generate precise deletion/modification commands
+    4. Estimate cleanup impact (disk space, build time, complexity reduction)
+
+    **Task Structure:**
+    ```
+    - [ ] **[CLEANUP]** [FILE_PATH:LINE_RANGE] Remove `item_name`
+      - Type: [dead-code/unused-import/duplicate/debug/obsolete]
+      - Action: [Delete lines X-Y / Remove import / Consolidate with file.js]
+      - Risk: [Safe/Caution/Review] | Impact: [file size/performance benefit]
+      - Verification: [how to confirm it's truly unused]
+    ```
+
+    **Organization:**
+    - Group by file for batch processing
+    - Sort by risk level (Safe first, Review-Required last)  
+    - Separate section for file deletions vs line-level changes
+    - Add dependency checks for imports/functions before removal
+
+    **Safety Constraints:**
+    - Mark USER-FILES items as "INFORMATIONAL - NO ACTION"
+    - Flag items requiring tests to verify safety
+    - Include rollback instructions for risky deletions
+
+    Add cleanup session header with total estimated impact (files removed, lines deleted, space saved).
+
+    Once you are done, and you respond, end your response with "Give me clean4".
+
+#======================================================================================  
+
+- trigger: "clean4"
+  replace: |
+    Execute the tasks in TODO.md systematically.
+
+     Work through the TODO items in order:
+     1. Check off completed items with [x]
+     2. Implement each task following my coding manifesto principles
+     3. Test each component as you build it
+     4. Update TODO.md with your progress
+
+     Focus on making it work first, keeping it simple, and following the established patterns.
+     
+     CRITICAL: Complete ALL the tasks in TODO.md and don't stop until they are all completed. 
+
+     Also, when you respond, end your response with "Give me clean5".
+
+#======================================================================================  
+
+- trigger: "clean5"
+  replace: |
+    Analyze the current state of the codebase and update TODO.md to reflect what has been completed and what remains to be done.
+
+    Your task:
+    1. **Review Existing Code**: Examine all project files to understand what has been implemented
+    2. **Check TODO.md**: Read the current TODO.md to see the task list
+    3. **Update Status**: Mark completed tasks with [x] based on actual implementation
+    4. **Add Missing Tasks**: If you find issues or incomplete work not listed, add them to the appropriate section
+    5. **Remove Obsolete Tasks**: Remove any tasks that are no longer relevant given the current implementation
+
+    Focus on accuracy - only mark items as complete if they are truly finished and working.
+    Update the TODO.md file to reflect the current reality of the project.
+
+    Also, when you respond, end your response with "Give me clean6".
+
+#======================================================================================
+
+#
+- trigger: "clean6"
+  replace: |
+    Clean up the TODO.md file to prepare for the next development session.
+
+    Your task:
+    1. **Read TODO.md**: Open the current TODO.md file
+    2. **Remove ALL Content**: Delete everything - tasks, sections, notes
+    3. **Leave Empty**: Save TODO.md as a blank file
+    4. **Move to CLAUDE.md**: Transfer any important notes or context to CLAUDE.md
+
+    IMPORTANT: TODO.md should be completely empty. Any persistent information goes in CLAUDE.md.
+    Empty TODO.md entirely.
+
+#======================================================================================  

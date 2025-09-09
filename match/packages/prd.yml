@@ -1,0 +1,161 @@
+# Claude Code Commands converted to Espanso triggers
+# Auto-generated from markdown files in commands/ directory
+#======================================================================================  
+name: code-refactor
+package_author: Ruben
+parent: default
+matches:
+
+#======================================================================================  
+
+- trigger: "prd1"
+  replace: |
+    You are an expert software developer and project manager. Before we begin creating a Product Requirements Document, I need you to thoroughly understand my coding philosophy and constraints.
+
+    Please read and analyze these two documents:
+    1. `USER-FILES/00.KB/code_manifesto_memo.md`: My coding philosophy and principles
+    2. `USER-FILES/00.KB/code_quantity_memo.md`: My file size management guidelines
+
+    After reading both documents, provide a brief summary of the key principles I follow and any potential tensions or trade-offs between different principles that I should be aware of when planning Python projects.
+
+    Confirm you understand these principles before we proceed to the PRD creation process.
+    Also, when you respond, end your response with "Give me prd2".
+
+#======================================================================================  
+
+
+- trigger: "prd2"
+  replace: |
+    Your task is to take a raw idea for a Python script and formalize it into a detailed Product Requirements Document (PRD) that strictly adheres to my established principles.  
+    I have provided three files:  
+    1. `USER-FILES/00.KB/idea_brief.md`: This is a rough outline of the Python script idea.  
+    2. `USER-FILES/00.KB/PRD_Instructions_Template.md`: This is my preferred template for organizing a Python script PRD.  
+    3. `USER-FILES/00.KB/prd.md`: This is the target output file.
+
+    Your process should be as follows:
+
+    1. **Analyze the Request**: Review idea_brief.md to understand the core functionality and goals, ensuring alignment with my coding philosophy (minimalism, one tool/one purpose, etc.).  
+    2. **Apply the Template**: Use the structure and sections defined in PRD_Instructions_Template.md as the blueprint for the final PRD.  
+    3. **Synthesize and Formalize**: Fill in prd.md by translating the rough notes from idea_brief.md into the formal, detailed sections of the PRD template. Ensure the technical approach respects my coding principles and file size constraints.  
+    4. **Generate Questions**: Before generating the final prd.md, critically analyze the synthesis and create `USER-FILES/07.TEMP/prd_questions.md` with specific questions about any conflicts between the idea brief and my coding philosophy, unclear technical approaches, or areas needing clarification.
+
+    In the prd_questions.md file after each question there should be a response form for the user:
+
+    **USER RESPONSE:**
+    ```
+    [WRITE RESPONSE HERE]
+    ```
+
+    Do not generate the final prd.md until I have provided responses in the prd_questions.md file. Begin by creating the questions file.
+    Also, when you respond, end your response with "Give me prd3".
+#======================================================================================  
+
+- trigger: "prd3"
+  replace: |
+    Your task is to generate the final Product Requirements Document (PRD) based on the provided files and my responses to your questions.
+
+    I have provided these files:
+    1. `USER-FILES/00.KB/idea_brief.md`: The rough outline of the Python script idea.
+    2. `USER-FILES/00.KB/PRD_Instructions_Template.md`: The template structure for organizing the PRD.
+    3. `USER-FILES/07.TEMP/prd_questions.md`: Your questions about the project with my responses filled in.
+
+    Your task:
+    1. **Review All Inputs**: Analyze the idea brief, template structure, and my responses to your questions.
+    2. **Generate Final PRD**: Create the comprehensive `USER-FILES/00.KB/prd.md` file by:
+       - Following the structure defined in PRD_Instructions_Template.md
+       - Incorporating all details from idea_brief.md
+       - Using my responses from prd_questions.md to resolve ambiguities and fill gaps
+       - Ensuring the tone is professional and technical requirements are clear and actionable
+
+    Generate the complete prd.md file now.
+    Also, when you respond, end your response with "Give me prd4".
+#======================================================================================  
+
+
+- trigger: "prd4"
+  replace: |
+    We have the PRD in:
+    1. `USER-FILES/00.KB/prd.md`: The completed Product Requirements Document for the Python script.
+
+    Your task:
+    1. **Analyze the PRD**: Review the entire PRD to understand the scope, technical requirements, and deliverables.
+    2. **Break Down into Tasks**: Create specific, actionable tasks that cover the complete development lifecycle.
+    3. **Generate TODO File**: Create `TODO.md` with tasks organized by development phases.
+
+    Structure the TODO.md file with these sections:
+
+    ## Project Setup
+    - [ ] Environment and dependency tasks
+
+    ## Core Development  
+    - [ ] Main functionality tasks (broken down by feature/component)
+
+    ## Testing & Validation
+    - [ ] Testing tasks with real data
+
+    ## Documentation & Polish
+    - [ ] Final documentation and cleanup tasks
+
+    Each task should be:
+    - Specific and actionable (avoid vague tasks like "implement feature X")
+    - Sized appropriately (completable in 1-4 hours)
+    - Include file/function names where applicable
+    - Reference specific PRD sections when relevant
+
+    Follow my coding philosophy: keep tasks focused, avoid feature creep, prioritize simplicity.
+
+    Generate the complete TODO.md file now.
+    Also, when you respond, end your response with "Give me prd5".
+
+#======================================================================================  
+
+- trigger: "prd5"
+  replace: |
+    Execute the tasks in TODO.md systematically.
+
+    Work through the TODO items in order:
+    1. Check off completed items with [x]
+    2. Implement each task following my coding manifesto principles
+    3. Test each component as you build it
+    4. Update TODO.md with your progress
+
+    Focus on making it work first, keeping it simple, and following the established patterns.
+
+    CRITICAL: Complete ALL the tasks in TODO.md and don't stop until they are all completed. 
+
+    Once you are done, and you respond, end your response with "Give me prd6".
+
+#======================================================================================  
+# Update TODO based on codebase state
+- trigger: "prd6"
+  replace: |
+    Analyze the current state of the codebase and update TODO.md to reflect what has been completed and what remains to be done.
+
+    Your task:
+    1. **Review Existing Code**: Examine all project files to understand what has been implemented
+    2. **Check TODO.md**: Read the current TODO.md to see the task list
+    3. **Update Status**: Mark completed tasks with [x] based on actual implementation
+    4. **Add Missing Tasks**: If you find issues or incomplete work not listed, add them to the appropriate section
+    5. **Remove Obsolete Tasks**: Remove any tasks that are no longer relevant given the current implementation
+
+    Focus on accuracy - only mark items as complete if they are truly finished and working.
+    Update the TODO.md file to reflect the current reality of the project.
+
+    Also, when you respond, end your response with "Give me prd7".
+
+#======================================================================================  
+# Clean up completed tasks from TODO
+- trigger: "prd7"
+  replace: |
+    Clean up the TODO.md file to prepare for the next development session.
+
+    Your task:
+    1. **Read TODO.md**: Open the current TODO.md file
+    2. **Remove ALL Content**: Delete everything - tasks, headers, notes, comments
+    3. **Create Empty File**: Write an empty TODO.md file (completely blank)
+    4. **Archive Notes**: Any important notes or reminders from TODO.md should be moved to CLAUDE.md
+
+    ESSENTIAL: TODO.md must be completely empty. This ensures a clean start for every new project/feature.
+    All persistent documentation and notes belong in CLAUDE.md, not TODO.md.
+
+#======================================================================================  

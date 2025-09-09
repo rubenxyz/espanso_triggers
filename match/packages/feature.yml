@@ -1,0 +1,124 @@
+# Claude Code Commands converted to Espanso triggers
+# Auto-generated from markdown files in commands/ directory
+#======================================================================================  
+name: code-feaure
+package_author: Ruben
+parent: default
+matches:
+
+#======================================================================================  
+# Review coding philosophy for feaures
+- trigger: "new1"
+  replace: |
+    I need you to thoroughly understand my coding philosophy and constraints.
+
+    Please read and analyze these two documents:
+    1. `USER-FILES/00.KB/code_manifesto_memo.md`: My coding philosophy and principles
+    2. `USER-FILES/00.KB/code_quantity_memo.md`: My file size management guidelines
+
+    After reading both documents, provide a brief summary of the key principles I follow and any potential tensions or trade-offs between different principles that I should be aware of when planning Python projects.
+
+    Confirm you understand these principles before we proceed to the feaure implementation process.
+    Also, when you respond, end your response with "Give me new2".
+
+#======================================================================================  
+# Analyze feaure and generate questions
+- trigger: "new2"
+  replace: |
+    Your task is to analyze a raw idea for a new feaure/behavior for the project and generate clarifying questions to ensure it adheres to my established principles.  
+    I have provided three files:  
+    1. `USER-FILES/07.TEMP/new_feaure.md`: This is a rough outline of the new feaure idea.  
+    2. `USER-FILES/07.TEMP/new_feaure_questions.md`: This is the target output file.
+
+    Your process should be as follows:
+
+    1. **Analyze the Request**: Review new_feaure.md to understand the core functionality and goals, ensuring alignment with my coding philosophy (minimalism, one tool/one purpose, etc.).  
+    2. **Generate Questions**: Critically analyze the synthesis and create `USER-FILES/07.TEMP/new_feaure_questions.md` with specific questions about any conflicts between the idea brief and my coding philosophy, unclear technical approaches, or areas needing clarification.
+
+    In the new_feaure_questions.md file after each question there should be a response form for the user:
+
+    **USER RESPONSE:**
+    ```
+    [WRITE RESPONSE HERE]
+    ```
+
+    Also, when you respond, end your response with "Review my question!!! Then give me new3".
+
+#======================================================================================  
+
+# fea-todo - Convert feaure specification to actionable development tasks 
+- trigger: "new3"
+  replace: |
+    Parse /USER-FILES/07.TEMP/new_feaure.md and generate structured TODO tasks. Write all tasks directly to /TODO.md file. For each feaure requirement:
+
+    1. Extract the specific feaure component, acceptance criteria, and dependencies
+    2. Categorize the task type (API, UI, database, testing, documentation, etc.)
+    3. Generate a specific implementation action with technical approach
+    4. Estimate effort (1-3 story points) and add appropriate labels
+
+    Structure each TODO as:
+    ```
+    - [ ] **[COMPONENT_TYPE]** Implement `feaure_name` 
+      - Requirement: [specific feaure requirement]
+      - Action: [exact implementation approach]
+      - Impact: [user benefit/business value]
+      - Effort: [1-3 points] | Priority: [High/Med/Low]
+    ```
+
+    Group tasks by component/layer (Frontend, Backend, Database, Testing) and sort by dependency order. Add feaure specification timestamps and create cross-references for related tasks that should be implemented together. Append new tasks to existing /TODO.md content.
+
+    Once you are done, and you respond, end your response with "Give me new4".
+
+#======================================================================================  
+# Execute feaure tasks systematically  
+- trigger: "new4"
+  replace: |
+    Execute the tasks in TODO.md systematically.
+
+     Work through the TODO items in order:
+     1. Check off completed items with [x]
+     2. Implement each task following my coding manifesto principles
+     3. Test each component as you build it
+     4. Update TODO.md with your progress
+
+     Focus on making it work first, keeping it simple, and following the established patterns.
+     
+     CRITICAL: Complete ALL the newly added feaure tasks in TODO.md and don't stop until they are all completed. 
+
+     Also, when you respond, end your response with "Give me new5".
+
+#======================================================================================  
+# Update TODO status based on codebase
+- trigger: "new5"
+  replace: |
+    Analyze the current state of the codebase and update TODO.md to reflect what has been completed and what remains to be done.
+
+    Your task:
+    1. **Review Existing Code**: Examine all project files to understand what has been implemented
+    2. **Check TODO.md**: Read the current TODO.md to see the task list
+    3. **Update Status**: Mark completed tasks with [x] based on actual implementation
+    4. **Add Missing Tasks**: If you find issues or incomplete work not listed, add them to the appropriate section
+    5. **Remove Obsolete Tasks**: Remove any tasks that are no longer relevant given the current implementation
+
+    Focus on accuracy - only mark items as complete if they are truly finished and working.
+    Update the TODO.md file to reflect the current reality of the project.
+
+    Also, when you respond, end your response with "Give me new6"
+
+#======================================================================================  
+# Clean up completed tasks from TODO
+- trigger: "new6"
+  replace: |
+    Clean up the TODO.md file to prepare for the next development session.
+
+    Your task:
+    1. **Read TODO.md**: Open the current TODO.md file
+    2. **Remove ALL Content**: Delete all tasks (both completed [x] and incomplete [ ])
+    3. **Leave File Empty**: The TODO.md should be completely blank for the next session
+    4. **Move Notes to CLAUDE.md**: If there are any important notes, reminders, or context in TODO.md, move them to CLAUDE.md instead
+
+    IMPORTANT: TODO.md should be a blank slate after this cleanup. Any persistent notes belong in CLAUDE.md.
+
+    Also, when you respond, end your response with "You're all done! The newure has been implemented and TODO.md is ready for the next session."
+
+#======================================================================================  

@@ -1,0 +1,58 @@
+# Claude Code Commands converted to Espanso triggers
+# Auto-generated from markdown files in commands/ directory
+#======================================================================================  
+name: basic-commands
+package_author: Ruben
+parent: default
+matches:
+#======================================================================================  
+# cbest - Best option implementation
+- trigger: "cbest"
+  replace: "Proceed to implement the option that you deem best in this situation."
+#======================================================================================  
+# Outputs public IP address
+- trigger: "yolo"
+  replace: "claude --dangerously-skip-permissions"
+#======================================================================================  
+# ccost - Cost report
+- trigger: "ccost"
+  replace: "Run cost report tool. Thank you."
+#======================================================================================  
+# cdesc - Description confirmation
+- trigger: "cdesc"
+  replace: |
+    Do not take any action or make any code changes yet.
+    First, carefully consider these instructions and repeat them back to me in your own words to confirm your understanding of the intent.
+
+    If you notice any mistakes or gaps in logic, ask any necessary questions to clarify or fill in those gaps.
+#======================================================================================  
+# cflake - Python code quality check
+- trigger: "cflake"
+  replace: "Please thoroughly review my Python codebase to ensure it's clean, efficient, and free of issues. Use Flake8 to find any unused imports that are cluttering the code. Check with Pylint to identify potential logical errors or quality problems. Apply Mypy to catch any type-related mistakes that could cause issues. Also, look for the ten largest Python files, as they might be bloated and need attention. Combine the findings from these tools and give me a clear, concise summary of the top five issues—such as unused code, style problems, type errors, or oversized files—along with specific suggestions for cleaning them up. Make sure I can review everything before any changes are applied."
+#======================================================================================  
+# cplan - Analyze and plan
+- trigger: "cplan"
+  replace: "Analyze this request's complexity, decide on the best implementation options, break it into actionable steps."
+#======================================================================================  
+# cpr - Proceed
+- trigger: "cpr"
+  replace: "Please proceed. Thank you."
+#======================================================================================  
+# cread - Read codebase
+- trigger: "cread"
+  replace: "Please read through the codebase and return a short summary of what you learned."
+  #======================================================================================  
+  # crun - Run script
+- trigger: "crun"
+  replace: "Enter venv and run the script live on the input folder. Thank You."
+#======================================================================================  
+
+# ctop10 - Top 10 Python files
+- trigger: "ctop10"
+  replace: "Give me a top 10 list with the python files with the most most lines."
+#======================================================================================  
+# cupdate - Codebase review
+- trigger: "cupdate"
+  replace: "Don't act or change any code yet. Review the entire code base and make sure that everything is up-to-date with the current behaviour of the code, the intention of the creator and that everything is aligned. Report back to me with your suggestions for improvement, but don't over engineer. Thank you."
+
+#======================================================================================  
