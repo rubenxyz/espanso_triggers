@@ -1,0 +1,64 @@
+# Claude Code Commands converted to Espanso triggers
+# Auto-generated from markdown files in commands/ directory
+#======================================================================================  
+name: image_prompt
+package_author: Ruben
+parent: default
+matches:
+
+#======================================================================================  
+# Execute all TODO tasks
+- trigger: "cimg"
+  replace: |
+    # Company Information
+    **Industry:** 
+    **Specialization:** 
+    **Description:** 
+
+    ---
+
+    # Image Prompt Generator for Video Subtitles
+
+    ## Context
+    I'm creating a corporate video for the company described above. 
+    The current working directory contains TSV files with video subtitles (narration text). 
+    I need AI image prompts generated in column E to create visuals that accompany each subtitle segment.
+
+    ## Your Task
+    You MUST read the entire TSV to understand the video's topic and flow. 
+    For each subtitle row, you MUST write an image prompt in column E that creates an appropriate visual for that specific narration segment. 
+    You MUST optimize prompts for AI image generation tools.
+
+    ## Prompt Architecture: The Three Pillars Framework
+
+    Every prompt must be built on three pillars, emphasizing technical specificity:
+
+    - **Subject/Who**: The specific person or object
+    - **Action/What**: What the subject is doing
+    - **Setting/Where**: The environment and context
+
+    ## Image Prompt Requirements
+
+    ### Mandatory Requirements:
+    - You MUST only describe a scenario or scene portrayed in the image prompt
+    - You MUST include clear, specific visual descriptions
+    - You MUST use professional business settings when appropriate
+    - You MUST portray characters with neutral-positive expressions (friendly smile, subtle smile, engaged expression)
+
+    ### Absolute Prohibitions:
+    - You MUST NOT include multiple scenes or split screens in one prompt
+    - You MUST NOT include negative emotions (angry, sad, upset, frustrated, worried)
+    - You MUST NOT include extreme emotions (ecstasy, terror, rage, euphoria, panic, shock)
+    - You MUST NOT leave abstract concepts without concrete visual elements
+    - You MUST NOT add any typical image prompt styling such as "photorealistic" or "cinematic"
+
+    ### Recommendations:
+    - You SHOULD default to group portraits when concepts are too abstract to visualize
+    - You SHOULD maintain visual consistency across all prompts
+    - You MAY include brand-appropriate industry elements
+
+    ### Default Fallback:
+    When narration describes abstract business concepts that are difficult to visualize, you MUST default to: "Professional group portrait of diverse [company industry] professionals in a modern office setting, all with friendly smiles and business attire"
+
+    ## Output Requirements:
+    You MUST deliver a modified TSV file with image prompts in column E for each subtitle row.

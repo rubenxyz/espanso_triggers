@@ -46,8 +46,17 @@ matches:
     [WRITE RESPONSE HERE]
     ```
 
+    If you give any multiple choices to choose from, make sure that this options are always numbered like:
+
+    ```
+    1. Option A
+    2. Option B
+    3. Option C
+    ```
+
     Do not generate the final prd.md until I have provided responses in the prd_questions.md file. Begin by creating the questions file.
-    Also, when you respond, end your response with "Give me prd3".
+
+    Also, when you respond, end your response with "Review my question!!! Then give me prd and the number three as one word".
 #======================================================================================  
 
 - trigger: "prd3"
@@ -157,5 +166,7 @@ matches:
 
     ESSENTIAL: TODO.md must be completely empty. This ensures a clean start for every new project/feature.
     All persistent documentation and notes belong in CLAUDE.md, not TODO.md.
+
+    Also, when you respond, end your response with "PRD PROCESS IS DONE".   
 
 #======================================================================================  

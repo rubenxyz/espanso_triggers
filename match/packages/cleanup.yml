@@ -157,4 +157,6 @@ matches:
     IMPORTANT: TODO.md should be completely empty. Any persistent information goes in CLAUDE.md.
     Empty TODO.md entirely.
 
+    Also, when you respond, end your response with "CLEANUP IS DONE".   
+
 #======================================================================================  

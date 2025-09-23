@@ -143,6 +143,6 @@ matches:
     CRITICAL: TODO.md must be empty for the next session. All documentation belongs in CLAUDE.md.
     Clear TODO.md completely.
 
-    Also, when you respond, end your response with "Give me ref7".
+    Also, when you respond, end your response with "REFACTORING IS DONE".   
 
 #======================================================================================  

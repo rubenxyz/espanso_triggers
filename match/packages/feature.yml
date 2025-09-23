@@ -27,8 +27,8 @@ matches:
   replace: |
     Your task is to analyze a raw idea for a new feaure/behavior for the project and generate clarifying questions to ensure it adheres to my established principles.  
     I have provided three files:  
-    1. `USER-FILES/07.TEMP/new_feaure.md`: This is a rough outline of the new feaure idea.  
-    2. `USER-FILES/07.TEMP/new_feaure_questions.md`: This is the target output file.
+    1. `USER-FILES/07.TEMP/new_feature.md`: This is a rough outline of the new feaure idea.  
+    2. `USER-FILES/07.TEMP/new_feature_questions.md`: This is the target output file.
 
     Your process should be as follows:
 
@@ -42,14 +42,22 @@ matches:
     [WRITE RESPONSE HERE]
     ```
 
-    Also, when you respond, end your response with "Review my question!!! Then give me new3".
+    If you give any multiple choices to choose from, make sure that this options are always numbered like:
+
+    ```
+    1. Option A
+    2. Option B
+    3. Option C
+    ```
+
+    Also, when you respond, end your response with "Review my question!!! Then give me new and the number three as one word".
 
 #======================================================================================  
 
 # fea-todo - Convert feaure specification to actionable development tasks 
 - trigger: "new3"
   replace: |
-    Parse /USER-FILES/07.TEMP/new_feaure.md and generate structured TODO tasks. Write all tasks directly to /TODO.md file. For each feaure requirement:
+    Parse /USER-FILES/07.TEMP/new_feature.md, `USER-FILES/07.TEMP/new_feaure_questions.md` and generate structured TODO tasks. Write all tasks directly to /TODO.md file. For each feaure requirement:
 
     1. Extract the specific feaure component, acceptance criteria, and dependencies
     2. Categorize the task type (API, UI, database, testing, documentation, etc.)
@@ -119,6 +127,6 @@ matches:
 
     IMPORTANT: TODO.md should be a blank slate after this cleanup. Any persistent notes belong in CLAUDE.md.
 
-    Also, when you respond, end your response with "You're all done! The newure has been implemented and TODO.md is ready for the next session."
+    Also, when you respond, end your response with "NEW FEATURE SESSION IS DONE".   
 
 #======================================================================================  
