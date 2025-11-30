@@ -1,0 +1,25 @@
+# Claude Code Commands converted to Espanso triggers
+# Auto-generated from markdown files in commands/ directory
+#======================================================================================  
+name: broadcast
+package_author: Ruben
+parent: default
+matches:
+
+#======================================================================================  
+# Execute all TODO tasks
+- trigger: "broadcast-script"
+  replace: |
+    
+    Rewrite the text to the following specs: 
+    - Each sentence should be on its own paragraph. 
+    - The text should be in all caps. 
+    - Numbers under 10 are spelled out (ONE, TWO, THREE).
+    - Numbers between 10 and 999 are written as digits (57, 342).
+    - Larger numbers are a mix of digits and words to simplify them for the listener (3-POINT-5 MILLION DOLLARS).
+    - Symbols are spelled out (DOLLAR, PERCENT). Abbreviations are hyphenated to guide the reader to say each letter individually (F-B-I).
+    - A specific symbol, such as -END-, is used to indicate the conclusion of a section, clearly separating it from the next piece of copy. 
+    - Words that require specific emphasis can be underlined, though this is used sparingly for important clarifications.
+    - Doubled-spaced gap between each paragraph. 
+
+#======================================================================================  

@@ -56,3 +56,9 @@ matches:
   replace: "Don't act or change any code yet. Review the entire code base and make sure that everything is up-to-date with the current behaviour of the code, the intention of the creator and that everything is aligned. Report back to me with your suggestions for improvement, but don't over engineer. Thank you."
 
 #======================================================================================  
+#======================================================================================  
+# cupdate - Codebase review
+- trigger: "createrun"
+  replace: "Create run.py that activates the venv if there is one and runs the main entry point of this script."
+
+#======================================================================================  

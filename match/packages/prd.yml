@@ -12,9 +12,10 @@ matches:
   replace: |
     You are an expert software developer and project manager. Before we begin creating a Product Requirements Document, I need you to thoroughly understand my coding philosophy and constraints.
 
-    Please read and analyze these two documents:
+    Please read and analyze these thee documents:
     1. `USER-FILES/00.KB/code_manifesto_memo.md`: My coding philosophy and principles
     2. `USER-FILES/00.KB/code_quantity_memo.md`: My file size management guidelines
+    3. `USER-FILES/00.KB/code_progress_bar_manifesto.md` My progress bar guidliens
 
     After reading both documents, provide a brief summary of the key principles I follow and any potential tensions or trade-offs between different principles that I should be aware of when planning Python projects.
 
@@ -43,7 +44,7 @@ matches:
 
     **USER RESPONSE:**
     ```
-    [WRITE RESPONSE HERE]
+    
     ```
 
     If you give any multiple choices to choose from, make sure that this options are always numbered like:
@@ -56,7 +57,7 @@ matches:
 
     Do not generate the final prd.md until I have provided responses in the prd_questions.md file. Begin by creating the questions file.
 
-    Also, when you respond, end your response with "Review my question!!! Then give me prd and the number three as one word".
+    Also, when you respond, end your response with "Review my questions!!! Then give me prd and the number three as one word".
 #======================================================================================  
 
 - trigger: "prd3"

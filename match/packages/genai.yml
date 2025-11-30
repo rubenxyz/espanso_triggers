@@ -1,0 +1,88 @@
+# Claude Code Commands converted to Espanso triggers
+# Auto-generated from markdown files in commands/ directory
+#======================================================================================  
+name: genai
+package_author: Ruben
+parent: default
+matches:
+
+#======================================================================================  
+# Provided image
+- trigger: "gen0"
+  replace: A cinematic shot from a scene
+
+#======================================================================================  
+# Provided image
+- trigger: "gen1"
+  replace: See provided image for a reference of what
+
+#======================================================================================  
+# Provided image
+- trigger: "gen2"
+  replace: actually looks like.
+
+#======================================================================================  
+
+# Provided image
+- trigger: "gen3"
+  replace: Shot on 35 mm film in the style of Roger Deakins.
+
+#======================================================================================  
+# Provided image
+- trigger: "genasp"
+  replace: |
+    The image you will generate should follow the aspect ratio of the provided image.    
+
+#======================================================================================  
+# Provided image
+- trigger: "genin"
+  replace: Camera dollies in fast.
+
+#======================================================================================  
+# Provided image
+- trigger: "genout"
+  replace: Camera dollies out fast.
+
+#======================================================================================  
+# Provided image
+- trigger: "genfollow"
+  replace: Camera tracks behind.
+
+#======================================================================================  
+
+# Provided image
+- trigger: "genleading"
+  replace: Camera tracks backward as [subject] walks toward lens.
+
+#======================================================================================  
+
+# Provided image
+- trigger: "genside"
+  replace: Camera tracks alongside.
+
+#======================================================================================  
+# Provided image
+- trigger: "genshake"
+  replace: Handheld steadicam shake, subtle imperfections.
+
+#======================================================================================  
+# Provided image
+- trigger: "gennozoom"
+  replace: No digital zoom, pure physical camera movement.
+
+#======================================================================================  
+# Provided image
+- trigger: "genpara"
+  replace: Parallax camera move. Extreme parallax shift.
+
+#======================================================================================
+# Provided image
+- trigger: "gencenter"
+  replace: The subject remains centered throughout.
+
+#======================================================================================  
+# Provided image
+- trigger: "gengravity"
+  replace: Physics accurate, gravity-aware motion.
+
+#======================================================================================  
