@@ -29,9 +29,9 @@ matches:
 
 #======================================================================================  
 # Provided image
-- trigger: "genasp"
+- trigger: "gen4"
   replace: |
-    The image you will generate should follow the aspect ratio of the provided image.    
+    Fix the face.    
 
 #======================================================================================  
 # Provided image

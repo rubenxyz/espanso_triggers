@@ -44,7 +44,7 @@ matches:
 
     **USER RESPONSE:**
     ```
-    
+
     ```
 
     If you give any multiple choices to choose from, make sure that this options are always numbered like:
@@ -99,9 +99,6 @@ matches:
 
     ## Core Development  
     - [ ] Main functionality tasks (broken down by feature/component)
-
-    ## Testing & Validation
-    - [ ] Testing tasks with real data
 
     ## Documentation & Polish
     - [ ] Final documentation and cleanup tasks
